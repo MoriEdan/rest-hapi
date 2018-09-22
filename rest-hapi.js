@@ -92,9 +92,9 @@ async function register(server, options) {
     }
   }
 
-  registerHapiSwagger(server, Log, config)
+  await registerHapiSwagger(server, Log, config)
 
-  registerMrHorse(server, Log, config)
+  await registerMrHorse(server, Log, config)
 
   return generateRoutes(server, mongoose, models, Log, config)
 }

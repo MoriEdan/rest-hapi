@@ -92,7 +92,9 @@ async function register(server, options) {
     }
   }
 
-  await registerHapiSwagger(server, Log, config)
+  if (!config.disableSwagger) {
+    await registerHapiSwagger(server, Log, config)
+  }
 
   await registerMrHorse(server, Log, config)
 
